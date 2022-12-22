@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+{% block head %}
+{{ super() }}
+<link href="{{ url_for('static', filename='css/word_compat.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div id="searchContent" class="pt-2">
+{% if user_result %}
+<h3>Ваш результат финального теста {{ user_result }}%</h3>
+{% elif not current_user.is_teacher %}
+<p>Вы ещё не проходили финальный тест.</p>
+{% endif %}
+{% if results %}
+<h3>Результаты тестов:</h3>
+<ul>
+{% for result in results.items() %}
+<li><a href="/submissions/{{ result[0] }}">{{ result[1] }}</a></li>
+{% endfor %}
+</ul>
+{% elif current_user.is_teacher %}
+<p>На данный момент сохранённых результатов нет.</p>
+{% endif %}
+</div>
+{% endblock %}
+

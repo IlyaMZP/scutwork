@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+{% block title %}{{quiz_name}} Завершён!{% endblock %}
+
+{% block content %}
+<p></p>
+<p>Ваш Результат: {{score}}%</p>
+<p>
+{% if quiz_pass %}
+<div class="alert alert-success">
+<i class="fas fa-trophy"></i>
+Поздравляем, Вы прошли тест!
+{% if submit_emails %}
+An e-mail has been sent to
+{% for addr in submit_emails %}
+<a href="mailto:{{addr}}">{{addr}}</a>
+{{ ", " if not loop.last }}
+{% endfor %}
+so that you may receive credit.
+{% endif %}
+</p>
+
+<p>Ваш результат сохранён под номером: <a href="/submissions/{{submission_id}}">{{submission_id}}</a></p>
+</div>
+
+{% else %}
+<div class="alert alert-danger">
+<i class="fas fa-sad-tear"></i>
+К сожалению, Вы не прошли тест. Вам необходимо набрать минимум {{passing_score}}% чтобы пройти.
+</div>
+{% endif %}
+</p>
+
+{% if wrong_prompts %}
+<h4>Ответы с ошибками:</h4>
+{% for wrong_prompt in wrong_prompts %}
+<p class="mb-5">
+<div><a href="{{ url_for('.jump_to', target=wrong_i[loop.index0]) }}">Вопрос #{{wrong_i[loop.index0]}}</a>: {{wrong_prompt|safe}}</div>
+<div><i class="fas fa-times"></i> Неправильный ответ: {{wrong_answers[loop.index0]|safe}}</div>
+{% if wrong_hints[loop.index0] %}
+<div><i>Подсказка</i>: {{wrong_hints[loop.index0]|safe}}</div>
+</p>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+<p></p>
+<form id='answerform_python' method='post'>
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+<p>
+<!-- <button type='submit' class="btn btn-primary" formaction="{{ url_for('.back') }}">Back</button> -->
+<button type='submit' class="btn btn-danger" formaction="{{ url_for('.reset') }}">Пройти Другой Тест</button>
+</p>
+</form>
+
+{% endblock %}

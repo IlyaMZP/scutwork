@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="pt-2">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-8">
+                <img src="{{ url_for('static', filename='images/index.jpg') }}" class="rounded img-fluid">
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-3 w-100 bg-dark">
+                    <div class="card-header"><h4 id="content">Вход в Систему Тестирования</h4></div>
+                    <div class="card-body">
+    <form action="{{ url_for('.login') }}" method="POST" class="form" role="form">
+        {{ form.csrf_token }}
+        <div class="form-group required">
+            <label class="form-control-label" for="username">Username</label>
+            <input class="form-control" id="username" name="username" required="" type="text" value="">
+        </div>
+        <div class="form-group required">
+            <label class="form-control-label" for="password">Пароль</label>
+            <input class="form-control" id="password" name="password" required="" type="password" value="">
+        </div>
+        <div class="form-group form-check">
+            <input class="form-check-input" id="remember_me" name="remember_me" type="checkbox" value="y" checked>
+            <label class="form-check-label" for="remember_me">Запомнить меня</label>
+        </div>
+        <input class="btn btn-primary btn-md" id="submit" name="submit" type="submit" value="Войти">
+    </form>
+                        <hr>
+                        <a href="{{ url_for('.register') }}">Зарегистрироваться в системе</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

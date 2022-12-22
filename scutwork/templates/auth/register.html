@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+{% block content %}
+<div class="pt-2">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-8">
+                <img src="{{ url_for('static', filename='images/index.jpg') }}" class="rounded img-fluid">
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-3 w-100 bg-dark">
+                    <div class="card-header"><h4 id="content">Регистрация</h4></div>
+                    <div class="card-body">
+    <form action="{{ url_for('.register') }}" method="POST" class="form" role="form">
+        {{ form.csrf_token }}
+        <div class="form-group required">
+            <label class="form-control-label" for="username">Username</label>
+            <input class="form-control" id="username" name="username" required="" type="text" value="">
+        </div>
+        <div class="form-group required">
+            <label class="form-control-label" for="fullname">Ф.И.О.</label>
+            <input class="form-control" id="fullname" name="name" required="" type="text" value="">
+        </div>
+        <div class="form-group required">
+            <label class="form-control-label" for="password">Пароль</label>
+            <input class="form-control" id="password" name="password" required="" type="password" value="">
+        </div>
+        <div class="form-group required">
+            <label class="form-control-label" for="password2">Повтор пароля</label>
+            <input class="form-control" id="password2" name="password2" required="" type="password" value="">                
+        </div>
+        {% if groups %}
+        <label for="group_input">Select group</label>
+        <select id="group_input" class="form-control" name="group">
+        {% for key in groups %}
+          <option>{{ key.name }}</option>
+        {% endfor %}
+          <option disabled value="">Select Later</option>
+        </select>
+        {% endif %}
+        <input class="btn btn-primary btn-md mt-2" id="submit" name="submit" type="submit" value="Отправить">
+    </form>
+                        <hr>
+                        <small>Уже есть аккаунт? <a href="{{ url_for('.login') }}">Нажмите, чтобы войти.</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

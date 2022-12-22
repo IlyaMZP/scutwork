@@ -1,0 +1,15 @@
+flask
+bootstrap-flask
+flask-avatars
+flask-login
+flask-sqlalchemy
+flask-wtf
+python-dotenv
+sqlalchemy
+werkzeug
+wtforms
+flask_debugtoolbar
+pywebpush
+email_validator
+waitress
+natsort

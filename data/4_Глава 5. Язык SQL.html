@@ -1,0 +1,441 @@
+<p class="c25 c10"><span class="c7 c39">SQL</span><span class="c56"> - </span><span class="c56 c39">структурированный язык запросов баз данных.</span><span class="c56"> </span><span class="c0">SQL предназначен для сохранения, манипуляции и получения данных, которые хранятся в реляционной базе данных (далее – БД). Он является стандартным языком для Систем Управления Реляционными Базами Данных – СУБД (RDBMS), таких как MySQL, Oracle, Postgres и т.д.</span></p>
+<p class="c10 c37"><span class="c0">Эти системы используют различные диалекты SQL:</span></p>
+<ul class="c42 lst-kix_jzbccnmqxr9g-0 start">
+  <li class="c10 c24"><span class="c0">Oracle – PL/SQL</span></li>
+  <li class="c10 c38 c75"><span class="c56 c39">MS SQL – T-SQL</span></li>
+</ul>
+<p class="c41 c10 c77 c84"><span class="c14 c7">Преимущества SQL</span></p>
+<p class="c84 c41 c10 c77"><span class="c0">Среди преимуществ SQL мы можем выделить следующие:</span></p>
+<ul class="c42 lst-kix_dtte1pstk98f-0 start">
+  <li class="c1"><span class="c0">Позволяет пользователям получать доступ к данным в RDBMS.</span></li>
+  <li class="c1"><span class="c0">Позволяет пользователям описывать данные.</span></li>
+  <li class="c1"><span class="c0">Позволяет пользователям определять данные в БД и манипулировать ими.</span></li>
+  <li class="c1"><span class="c0">Позволяет встраивать другие языки, используя модули SQL, библиотеки и пре-компиляторы.</span></li>
+  <li class="c1"><span class="c0">Позволяет пользователям создавать и удалять БД и таблицы.</span></li>
+  <li class="c1"><span class="c0">Позволяет пользователю создавать встроенные виды, процедуры и функции в БД.</span></li>
+  <li class="c24 c10 c77"><span class="c0">Позволяет ограничивать доступ к таблицам, процедурам и видам.</span></li>
+</ul>
+<p class="c16 c10 c19"><span class="c14 c7"></span></p>
+<p class="c16 c10 c19"><span class="c14 c7"></span></p>
+<p class="c16 c10 c19"><span class="c14 c7"></span></p>
+<p class="c16 c10"><span class="c14 c7">SQL Команды</span></p>
+<p class="c16 c10"><span class="c0">Стандартные SQL команды для взаимодействия с реляционными БД:</span></p>
+<ul class="c42 lst-kix_dp6zoe727dy4-0 start">
+  <li class="c27 c10 li-bullet-0"><span class="c0">CREATE</span></li>
+  <li class="c10 c27 li-bullet-0"><span class="c0">SELECT</span></li>
+  <li class="c27 c10 li-bullet-0"><span class="c0">INSERT</span></li>
+  <li class="c27 c10 li-bullet-0"><span class="c0">UPDATE</span></li>
+  <li class="c27 c10 li-bullet-0"><span class="c0">DELETE</span></li>
+  <li class="c27 c10 li-bullet-0"><span class="c0">DROP</span></li>
+</ul>
+<p class="c16 c10"><span class="c0">Данные команды разбиты на две большие категории:</span></p>
+<p class="c16 c10 c19"><span class="c0"></span></p>
+<p class="c10 c16"><span class="c3">DDL – Data Definition Language</span></p>
+<a id="t.35ad06af4ab5c2a9244efcdd78a1a34ad16a8b6d"></a><a id="t.2"></a>
+<table class="c76">
+  <tbody>
+    <tr class="c2">
+      <td class="c74" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c3">Команда</span></p>
+      </td>
+      <td class="c73" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c3">Описание</span></p>
+      </td>
+    </tr>
+    <tr class="c58">
+      <td class="c11" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">CREATE</span></p>
+      </td>
+      <td class="c46" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">Создаёт новую таблицу, вид таблицы или другой объект в БД.</span></p>
+      </td>
+    </tr>
+    <tr class="c48">
+      <td class="c11" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">ALTER</span></p>
+      </td>
+      <td class="c46" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">Изменяет существующий объект БД (например, таблицу).</span></p>
+      </td>
+    </tr>
+    <tr class="c85">
+      <td class="c11" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">DROP</span></p>
+      </td>
+      <td class="c46" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">Удаляет указанную таблицу, вид таблицы или другой объект БД.</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="c16 c10 c19"><span class="c3"></span></p>
+<p class="c16 c10"><span class="c3">DML – Data Manipulation Language</span></p>
+<a id="t.d031ede59289469edaa8458beb326c57c41eff9f"></a><a id="t.3"></a>
+<table class="c76">
+  <tbody>
+    <tr class="c2">
+      <td class="c63" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c3">Команда</span></p>
+      </td>
+      <td class="c80" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c3">Описание</span></p>
+      </td>
+    </tr>
+    <tr class="c68">
+      <td class="c61" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">SELECT</span></p>
+      </td>
+      <td class="c43" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">Получает определённые данные из одной или нескольких таблиц.</span></p>
+      </td>
+    </tr>
+    <tr class="c33">
+      <td class="c61" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">INSERT</span></p>
+      </td>
+      <td class="c43" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">Создаёт запись</span></p>
+      </td>
+    </tr>
+    <tr class="c33">
+      <td class="c61" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">UPDATE</span></p>
+      </td>
+      <td class="c43" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">Изменяет записи</span></p>
+      </td>
+    </tr>
+    <tr class="c33">
+      <td class="c61" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">DELETE</span></p>
+      </td>
+      <td class="c43" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c14 c35">Удаляет записи</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="c16 c10 c19"><span class="c3"></span></p>
+<p class="c16 c10 c19"><span class="c3"></span></p>
+<p class="c16 c10 c19"><span class="c3"></span></p>
+<p class="c16 c10 c19"><span class="c3"></span></p>
+<p class="c16 c10"><span class="c3">DCL – Data Control Language</span></p>
+<a id="t.b7e89fb45a48a852afc48c9db54620dbdc1e8230"></a><a id="t.4"></a>
+<table class="c76">
+  <tbody>
+    <tr class="c2">
+      <td class="c69" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c47 c82">Команда</span></p>
+      </td>
+      <td class="c59" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c47 c82">Описание</span></p>
+      </td>
+    </tr>
+    <tr class="c33">
+      <td class="c64" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c20">GRANT</span></p>
+      </td>
+      <td class="c71" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c20">Дает все привилегии пользователю</span></p>
+      </td>
+    </tr>
+    <tr class="c78">
+      <td class="c64" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c20">REVOKE</span></p>
+      </td>
+      <td class="c71" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c20">Отменяет привилегии выданные пользователю</span></p>
+        <p class="c8 c10 c19"><span class="c20"></span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="c37 c10 c19 c77"><span class="c0"></span></p>
+<p class="c10 c21"><span class="c14 c7">Базовый синтаксис</span></p>
+<p class="c41 c10 c77 c81"><span class="c14 c7">Все SQL выражения начинаются с одного из следующих ключевых слов:</span></p>
+<ul class="c42 lst-kix_iz3f4cnene0m-0 start">
+  <li class="c15 c10"><span class="c14 c7">SELECT</span></li>
+  <li class="c15 c10"><span class="c14 c7">INSERT</span></li>
+  <li class="c15 c10"><span class="c14 c7">UPDATE</span></li>
+  <li class="c15 c10"><span class="c14 c7">DELETE</span></li>
+  <li class="c15 c10"><span class="c7 c14">ALTER</span></li>
+  <li class="c15 c10"><span class="c14 c7">DROP</span></li>
+  <li class="c15 c10"><span class="c14 c7">CREATE</span></li>
+  <li class="c15 c10"><span class="c14 c7">USE</span></li>
+  <li class="c10 c15"><span class="c14 c7">SHOW</span></li>
+</ul>
+<p class="c41 c10 c77"><span class="c14 c7">Таблица. Примеры команд</span></p>
+<a id="t.9005295fc43a0777751799de25f6f063d57e7e44"></a><a id="t.5"></a>
+<table class="c76">
+  <tbody>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8"><span class="c14 c7">Синтаксис</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8"><span class="c14 c7">Описание</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT колонка1, колонка2 ...</span></p>
+        <p class="c8 c10"><span class="c0">FROM   имя_таблицы;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Выборка элементов таблицы по конкретным колонкам в таблице</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT *</span></p>
+        <p class="c8 c10"><span class="c0">FROM   имя_таблицы;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Полная выборка из таблицы</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT колонка1, колонка2 ...</span></p>
+        <p class="c8 c10"><span class="c0">FROM   имя_таблицы</span></p>
+        <p class="c8 c10"><span class="c0">WHERE  условие;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Выборка элементов по условию</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT DISTINCT колонка1, колонка2 ...</span></p>
+        <p class="c8 c10"><span class="c0">FROM   имя_таблицы;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Выборка уникальных элементов из таблицы по колонкам</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT колонка1, колонка2 ...</span></p>
+        <p class="c8 c10"><span class="c0">FROM    имя_таблицы</span></p>
+        <p class="c8 c10"><span class="c0">WHERE  условие-1 {AND|OR} условие-2;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Выборка элементов с несколькими условиями</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT колонка1, колонка2 ...</span></p>
+        <p class="c8 c10"><span class="c0">FROM   имя_таблицы</span></p>
+        <p class="c8 c10"><span class="c0">WHERE  имя_колонки BETWEEN значение-1 AND значение-2;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Выборка элементов таблицы в диапазоне значений</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT колонка1, колонка2 ...</span></p>
+        <p class="c8 c10"><span class="c0">FROM   имя_таблицы</span></p>
+        <p class="c8 c10"><span class="c0">WHERE  имя_колонки IN (значение-1, значение-2);</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Выборка элементов таблицы с определенными элементами в колонке</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT колонка1, колонка2 ...</span></p>
+        <p class="c8 c10"><span class="c0">FROM   имя_таблицы</span></p>
+        <p class="c8 c10"><span class="c0">WHERE  условие</span></p>
+        <p class="c8 c10"><span class="c0">ORDER BY имя_колонки {ASC|DESC};</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Выборка элементов по условия и сортировкой</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT SUM(имя_колонки)</span></p>
+        <p class="c8 c10"><span class="c0">FROM   имя_таблицы</span></p>
+        <p class="c8 c10"><span class="c0">WHERE  условие</span></p>
+        <p class="c8 c10"><span class="c0">GROUP BY имя_колонки;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Выборка, которая вернет кол-во значений в колонке и сгруппирует их</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT SUM(имя_колонки)</span></p>
+        <p class="c8 c10"><span class="c0">FROM   имя_таблицы</span></p>
+        <p class="c8 c10"><span class="c0">WHERE  условие</span></p>
+        <p class="c8 c10"><span class="c0">GROUP BY имя_колонки</span></p>
+        <p class="c8 c10"><span class="c0">HAVING (условие);</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Выборка, которая вернет кол-во значений в колонке по условию значений набора столбца и сгруппирует их</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT колонка1, колонка2 ...</span></p>
+        <p class="c8 c10"><span class="c0">FROM   имя_таблицы</span></p>
+        <p class="c8 c10"><span class="c0">WHERE  имя_колонки LIKE {шаблон}</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Выборка элементов по шаблону</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">SELECT COUNT(имя_колонки)</span></p>
+        <p class="c8 c10"><span class="c0">FROM   имя_таблицы</span></p>
+        <p class="c8 c10"><span class="c0">WHERE  условие;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Выборка, которая вернет кол-во элементов колонки по условию</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">CREATE TABLE имя_таблицы(</span></p>
+        <p class="c8 c10"><span class="c0">колонка1 тип_данных,</span></p>
+        <p class="c8 c10"><span class="c0">колонка2 тип_данных,</span></p>
+        <p class="c8 c10"><span class="c0">колонка3 тип_данных,</span></p>
+        <p class="c8 c10"><span class="c0">...</span></p>
+        <p class="c8 c10"><span class="c0">PRIMARY KEY( одни или несколько колонок )</span></p>
+        <p class="c8 c10"><span class="c0">);</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Создание таблицы</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">DROP TABLE имя_таблицы;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Удаление таблицы</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">CREATE UNIQUE INDEX имя_индекса</span></p>
+        <p class="c8 c10"><span class="c0">ON имя_таблицы ( клонка1, колонка2 ...);</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Создание уникального индекса в таблице</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">ALTER TABLE имя_таблицы</span></p>
+        <p class="c8 c10"><span class="c0">DROP INDEX имя_индекса;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Изменение уже существующей таблицы, в которой удаляется индекс</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">DESC имя_таблицы;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Сортировка в порядке убывания</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">TRUNCATE TABLE имя_таблицы;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Очистка таблицы от всех данных</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">ALTER TABLE имя_таблицы {ADD|DROP|MODIFY} имя_колонки {тип_данных};</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Модификация таблицы</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">ALTER TABLE имя_таблицы RENAME TO новое_имя_таблицы;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Переименование таблицы</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">INSERT INTO имя_таблицы (колонка1, колонка2 ...)</span></p>
+        <p class="c8 c10"><span class="c0">VALUES ( значение1, значение2 ...);</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Внесение новых данных в существующую таблицу</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">UPDATE table_name</span></p>
+        <p class="c8 c10"><span class="c0">SET колонка1 = значение1, колонка2 = значение2 ...</span></p>
+        <p class="c8 c10"><span class="c0">[ WHERE условие ];</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Обновление таблицы с указанием конкретных столбцов для изменений</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">DELETE FROM имя_таблицы</span></p>
+        <p class="c8 c10"><span class="c0">WHERE  {условие};</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Удаление записей из таблицы по условию</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">CREATE DATABASE имя_базы_данных;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Создание базы данных</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">DROP DATABASE имя_базы_данных;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Удаление базы данных</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">USE имя_базы_данных;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Подключиться к базе данных</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">COMMIT;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Применение транзакции</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c13" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">ROLLBACK;</span></p>
+      </td>
+      <td class="c28" colspan="1" rowspan="1">
+        <p class="c8 c10"><span class="c0">Откатить транзакцию</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>

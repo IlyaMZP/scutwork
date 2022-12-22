@@ -1,0 +1,3 @@
+{% macro render_breadcrumb(endpoint, title) %}
+    <li class="breadcrumb-item"><a href="{{ url_for(endpoint, **kwargs) }}">{{ title }}</a></li>
+{% endmacro %}

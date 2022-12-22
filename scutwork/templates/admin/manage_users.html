@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import render_breadcrumb %}
+{% block title %}Управление пользователями{% endblock %}
+
+{% block content %}
+	<div class="page-header" style="padding-top:0">
+		<h1 style="margin:0">Управление пользователями</h1>
+	</div>
+	<div class="row">
+		<div class="col-sm-16">
+{% if users %}
+<div class="card">
+  <ul id="userList" class="list-group list-group-flush">
+{% for user in users %}
+{% if user.active %}
+    <li class="list-group-item">
+<img  aria-hidden="true" class="avatar-xs" style="height:82px;"
+                     src="{{ url_for('main.get_avatar', filename=user.pfp_m) }}">
+{{ user.username }} - {{ user.name }}, {{ user.role.name }}
+<br>
+    <div class="btn-group float-end">
+      {% if user.role.name != "Admin" %}
+        {% if user.role.name == "Teacher" %}
+        <a type="button" href="{{ url_for('main.set_student', user_id=user.id) }}" class="btn btn-primary">Сделать Учеником</a>
+        <button type="button" data-uri="{{ url_for('main.delete_user', user_id=user.id) }}" class="btn btn-danger delete-btn">Удалить</button>
+        {% else %}
+        <a type="button" href="{{ url_for('main.set_teacher', user_id=user.id) }}" class="btn btn-primary">Сделать Учителем</a>
+        <button type="button" data-uri="{{ url_for('main.delete_user', user_id=user.id) }}" class="btn btn-danger delete-btn">Удалить</button>
+        {% endif %}
+      {% endif %}
+    </div>
+    </li>
+{% endif %}
+{% endfor %}
+  </ul>
+</div>
+{% endif %}
+		</div>
+	</div>
+<div class="modal fade" id="deleteUserDialog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Подтверждение удаления</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel"></button>
+      </div>
+      <div class="modal-body">
+        Это удалит пользователя! Используйте с особой осторожностью!!!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+        <a type="button" id="delete_btn" class="btn btn-danger">Удалить</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
+<script>
+$(document).ready(function(){
+  $(".delete-btn").click(function() {
+    var link = $(this).data('uri');
+    console.log(link);
+    $(".modal-footer #delete_btn").attr("href", link );
+    $("#deleteUserDialog").modal("show");
+  });
+  $("#searchInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#userList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+{% endblock %}

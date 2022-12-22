@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<p>
+<h4>Выберете один из {{nquiz}} тестов:</h4>
+
+<form id='answerform_python' method='post'  > <!-- action must match your next URL -->
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+{% for quiz in quiz_list %}
+<div class='radio'>
+<label>
+<input type='radio' name='sel_quiz' id="q{{loop.index0}}" value="{{quiz}}" />
+{{quiz}}</label>
+</div>
+{% endfor %}
+</p>
+
+<p>
+<button id="start_quiz_btn" type='submit' class="btn btn-primary" formaction="{{ url_for('quiz.answer') }}">Начать</button>
+</p>
+</form>
+
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script>
+$('#answerform_python').one('submit', function(e) {
+  if ($("input:checked").length < 1)
+  {
+    alert ("Пожалуйства, выберите хотя бы один тест.");
+    $(".radio").first().children()[0].click();
+    return false;
+  }
+});
+
+</script>
+{% endblock %}

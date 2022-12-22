@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block title %}{{quiz_name}}, Question #{{num}} of {{ntot}}</h1>{% endblock %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+  <div class="alert alert-danger alert-dismissable" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span></button>
+    {{ message }}
+  </div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<h4>Вопрос:</h4>
+<p>{{question|safe}}</p>
+
+<h4>Ответ:</h4>
+<form id='answerform_python' method='post'>
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+{% for opt in opt_list %}
+<div class='radio'>
+  <label>
+  <input type='radio' name='answer_python' id="o{{loop.index0}}" value="{{opt}}"
+  {% if old_answer is not none and old_answer == opt %}checked {% endif %}/>
+  {{opt|safe}}</label>
+</div>
+{% endfor %}
+<p></p>
+<p>
+{% if num > 1 %}
+<button type='submit' class="btn btn-primary" formaction="{{ url_for('.back') }}">Назад</button>
+{% endif %}
+<button type='submit' class="btn btn-danger" formaction="{{ url_for('.reset') }}">Сброс</button>
+{% if not complete or num < ntot %}
+<button type='submit' class="btn btn-primary" formaction="{{ url_for('.answer') }}">Вперёд</button>
+{% endif %}
+</p>
+</form>
+
+{% endblock %}

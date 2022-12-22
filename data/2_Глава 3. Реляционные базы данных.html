@@ -1,0 +1,457 @@
+<p class="c34 c10"><span class="c12">Логическое представление реляционной базы данных облегчается созданием связи данных на основе логической конструкции, известной как отношение. Поскольку отношение является математическим понятием, пользователям гораздо проще представить отношение как таблицу. </span></p>
+<p class="c34 c10"><span class="c7">Таблица</span><span class="c12"> – двумерная структура, состоящая из строк и столбцов. Таблицу также называют отношением, потому что создатель реляционной модели Э.Ф. Кодд использовал оба термина в качестве синонимов. </span></p>
+<p class="c34 c10"><span class="c12">Таблица содержит коллекцию связанных сущностей, то есть множество сущностей. </span></p>
+<p class="c34 c10"><span class="c12">Например, таблица СТУДЕНТ содержит множество экземпляров сущностей, каждый из которых представляет студента. По этой причине термины множество сущностей и таблица часто взаимозаменяемы. </span></p>
+<p class="c34 c10"><span class="c12">Табличное представление данных позволяет легко определять связи сущностей, тем самым значительно упрощает задачу проектирования базы данных.</span></p>
+<p class="c21 c10 c38"><span class="c47 c7">Характеристики реляционной таблицы </span></p>
+<ul class="c42 lst-kix_l5b119pttlwz-0 start">
+  <li class="c6"><span class="c12">Таблица – двумерная структура, состоящая из строк и столбцов. </span></li>
+  <li class="c6"><span class="c12">Каждая строка таблицы (кортеж) представляет собой отдельное вхождение сущности в множество. </span></li>
+  <li class="c6"><span class="c12">Каждый столбец таблицы представляет атрибут и имеет собственное имя. </span></li>
+  <li class="c6"><span class="c12">Каждое пересечение строки и столбца представляет одно значение данных. </span></li>
+  <li class="c6"><span class="c12">Все значения в столбце должны соответствовать одному и тому же формату данных. </span></li>
+  <li class="c6"><span class="c12">Каждый столбец имеет определенный диапазон значений, известный как домен атрибута. </span></li>
+  <li class="c6"><span class="c12">Порядок строк и столбцов не имеет значения для СУБД. </span></li>
+  <li class="c10 c38 c53"><span class="c12">Каждая таблица должна иметь атрибут или комбинацию атрибутов, которые однозначно определяют каждую строку.</span></li>
+</ul>
+<p class="c51 c10 c72"><span class="c47 c55">Таблица Студент</span></p>
+<a id="t.9f482451039607ac0b80a41d1183de4eba3622a3"></a><a id="t.0"></a>
+<table class="c76">
+  <tbody>
+    <tr class="c17">
+      <td class="c45" colspan="1" rowspan="1">
+        <p class="c8"><span class="c18">СТ_КОД</span></p>
+      </td>
+      <td class="c32" colspan="1" rowspan="1">
+        <p class="c8"><span class="c18">СТ_ИМЯ</span></p>
+      </td>
+      <td class="c29" colspan="1" rowspan="1">
+        <p class="c8"><span class="c18">СТ_ФАМ</span></p>
+      </td>
+      <td class="c49" colspan="1" rowspan="1">
+        <p class="c51"><span class="c18">СТ_ОТЦ</span></p>
+      </td>
+      <td class="c50" colspan="1" rowspan="1">
+        <p class="c8"><span class="c18">СТ_ДР</span></p>
+      </td>
+      <td class="c65" colspan="1" rowspan="1">
+        <p class="c8"><span class="c18">СТ_ГРУП</span></p>
+      </td>
+      <td class="c9" colspan="1" rowspan="1">
+        <p class="c8"><span class="c18">СТ_ КУРС</span></p>
+      </td>
+      <td class="c36" colspan="1" rowspan="1">
+        <p class="c8"><span class="c18">СТ_ ПЕР</span></p>
+      </td>
+      <td class="c40" colspan="1" rowspan="1">
+        <p class="c8"><span class="c18">ПР_КОД</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c45" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">б-190701</span></p>
+      </td>
+      <td class="c32" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Анатолий</span></p>
+      </td>
+      <td class="c29" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Канаев</span></p>
+      </td>
+      <td class="c49" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Арсениевич</span></p>
+      </td>
+      <td class="c50" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">11.03.2003</span></p>
+      </td>
+      <td class="c65" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">3902</span></p>
+      </td>
+      <td class="c9" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">2</span></p>
+      </td>
+      <td class="c36" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">0</span></p>
+      </td>
+      <td class="c40" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">9015</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c45" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">б-190702</span></p>
+      </td>
+      <td class="c32" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Павел</span></p>
+      </td>
+      <td class="c29" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Матвиенко</span></p>
+      </td>
+      <td class="c49" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Потапович</span></p>
+      </td>
+      <td class="c50" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">15.05.2003</span></p>
+      </td>
+      <td class="c65" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">3902</span></p>
+      </td>
+      <td class="c9" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">2</span></p>
+      </td>
+      <td class="c36" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">0</span></p>
+      </td>
+      <td class="c40" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">9015</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c45" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">б-190703</span></p>
+      </td>
+      <td class="c32" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Карл</span></p>
+      </td>
+      <td class="c29" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Сальников</span></p>
+      </td>
+      <td class="c49" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Трофимович</span></p>
+      </td>
+      <td class="c50" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">25.01.2003</span></p>
+      </td>
+      <td class="c65" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">3902</span></p>
+      </td>
+      <td class="c9" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">2</span></p>
+      </td>
+      <td class="c36" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">0</span></p>
+      </td>
+      <td class="c40" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">9015</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c45" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">б-190704</span></p>
+      </td>
+      <td class="c32" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Владимир</span></p>
+      </td>
+      <td class="c29" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Клинских</span></p>
+      </td>
+      <td class="c49" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Богданович</span></p>
+      </td>
+      <td class="c50" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">30.12.2002</span></p>
+      </td>
+      <td class="c65" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">3902</span></p>
+      </td>
+      <td class="c9" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">2</span></p>
+      </td>
+      <td class="c36" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">0</span></p>
+      </td>
+      <td class="c40" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">9015</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c45" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">б-190706</span></p>
+      </td>
+      <td class="c32" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Василиса</span></p>
+      </td>
+      <td class="c29" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Сотова</span></p>
+      </td>
+      <td class="c49" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Владимировна</span></p>
+      </td>
+      <td class="c50" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">06.11.2002</span></p>
+      </td>
+      <td class="c65" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">3902</span></p>
+      </td>
+      <td class="c9" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">2</span></p>
+      </td>
+      <td class="c36" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">0</span></p>
+      </td>
+      <td class="c40" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">9015</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c45" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">б-190707</span></p>
+      </td>
+      <td class="c32" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Оксана</span></p>
+      </td>
+      <td class="c29" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Журавлева</span></p>
+      </td>
+      <td class="c49" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Павловна</span></p>
+      </td>
+      <td class="c50" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">31.10.2002</span></p>
+      </td>
+      <td class="c65" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">3902</span></p>
+      </td>
+      <td class="c9" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">2</span></p>
+      </td>
+      <td class="c36" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">0</span></p>
+      </td>
+      <td class="c40" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">9015</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c45" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">б-190708</span></p>
+      </td>
+      <td class="c32" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Дарья</span></p>
+      </td>
+      <td class="c29" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Кудрина</span></p>
+      </td>
+      <td class="c49" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Филипповна</span></p>
+      </td>
+      <td class="c50" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">10.09.2003</span></p>
+      </td>
+      <td class="c65" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">3902</span></p>
+      </td>
+      <td class="c9" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">2</span></p>
+      </td>
+      <td class="c36" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">0</span></p>
+      </td>
+      <td class="c40" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">9015</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c45" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">б-190709</span></p>
+      </td>
+      <td class="c32" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Виктория</span></p>
+      </td>
+      <td class="c29" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Никитина</span></p>
+      </td>
+      <td class="c49" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Леонидовна</span></p>
+      </td>
+      <td class="c50" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">22.05.2003</span></p>
+      </td>
+      <td class="c65" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">3902</span></p>
+      </td>
+      <td class="c9" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">2</span></p>
+      </td>
+      <td class="c36" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">0</span></p>
+      </td>
+      <td class="c40" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">9015</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c45" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">б-190710</span></p>
+      </td>
+      <td class="c32" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Матвей</span></p>
+      </td>
+      <td class="c29" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Шипеев</span></p>
+      </td>
+      <td class="c49" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Егорович</span></p>
+      </td>
+      <td class="c50" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">21.03.2003</span></p>
+      </td>
+      <td class="c65" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">3902</span></p>
+      </td>
+      <td class="c9" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">2</span></p>
+      </td>
+      <td class="c36" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">1</span></p>
+      </td>
+      <td class="c40" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">9015</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c45" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">б-190745</span></p>
+      </td>
+      <td class="c32" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Святослав</span></p>
+      </td>
+      <td class="c29" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Балин</span></p>
+      </td>
+      <td class="c49" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">Матвеевич</span></p>
+      </td>
+      <td class="c50" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">28.06.2003</span></p>
+      </td>
+      <td class="c65" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">3902</span></p>
+      </td>
+      <td class="c9" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">2</span></p>
+      </td>
+      <td class="c36" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">1</span></p>
+      </td>
+      <td class="c40" colspan="1" rowspan="1">
+        <p class="c8"><span class="c5">9015</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="c31 c10"><span class="c12">СТ_КОД = Код студента</span></p>
+<p class="c31 c10"><span class="c12">СТ_ИМЯ = Имя студента</span></p>
+<p class="c31 c10"><span class="c12">СТ_ФАМ = Фамилия студента</span></p>
+<p class="c31 c10"><span class="c12">СТ_ОТЦ = Отчество студента</span></p>
+<p class="c10 c31"><span class="c12">СТ_ДР = Дата рождения студента</span></p>
+<p class="c31 c10"><span class="c12">СТ_ГРУП = Номер группы</span></p>
+<p class="c31 c10"><span class="c12">СТ_КУРС = Курс</span></p>
+<p class="c31 c10"><span class="c12">СТ_ПЕР = Переведен из другого ВУЗ-а</span></p>
+<p class="c31 c10"><span class="c12">ПР_КОД = Код куратора</span></p>
+<ol class="c42 lst-kix_mmm2f39t0rso-0 start" start="1">
+  <li class="c6"><span class="c12">Таблица СТУДЕНТ – двумерная структура, состоящая из 10 строк (кортежей) и 9 столбцов (атрибутов). </span></li>
+  <li class="c6"><span class="c12">Каждая строка в таблице СТУДЕНТ описывает одно вхождение сущности во множество сущностей. Например, строка 4 на рисунке 5 описывает студента по имени «Владимир Богданович Клинских». Учитывая содержимое таблицы, множество сущностей СТУДЕНТ включает в себя десять отдельных сущностей (строк) или студентов. </span></li>
+  <li class="c6"><span class="c12">Каждый столбец представляет атрибут и имеет отдельное имя. </span></li>
+  <li class="c6"><span class="c12">Все значения в столбце соответствуют характеристикам атрибута. Данные должны быть классифицированы в соответствии с их форматом и функцией. Хотя разные СУБД могут поддерживать разные типы данных, большинство из них поддерживают по крайней мере следующие: </span></li>
+</ol>
+<ol class="c42 lst-kix_mmm2f39t0rso-1 start" start="1">
+  <li class="c34 c60 c10"><span class="c12">Числовой. Можно использовать числовые данные для выполнения арифметических процедур. 37 </span></li>
+  <li class="c34 c10 c60"><span class="c12">Символ. Символьные данные, или текстовые данные могут содержать любой символ или символ, не предназначенный для математических операций. </span></li>
+  <li class="c34 c60 c10"><span class="c12">Дата. Атрибуты даты содержат календарные даты, хранящиеся в специальном формате. </span></li>
+  <li class="c34 c60 c10"><span class="c12">Логический. Логические данные могут иметь только истинные/ ложные (да/нет или 1/0) значения. </span></li>
+</ol>
+<ol class="c42 lst-kix_mmm2f39t0rso-0" start="5">
+  <li class="c6"><span class="c12">Диапазон допустимых значений столбца называется его доменом. Поскольку значения СТ_КУРС ограничены диапазоном 1–4 включительно, доменом является [1,4]. </span></li>
+  <li class="c6"><span class="c12">Порядок строк и столбцов не имеет значения для пользователя. </span></li>
+  <li class="c6"><span class="c12">Каждая таблица должна иметь первичный ключ. Первичный ключ (PK) – это атрибут или комбинация атрибутов, которые однозначно идентифицируют данную строку. В этом случае СТ_КОД (код студента) является первичным ключом. </span></li>
+</ol>
+<p class="c21 c10"><span class="c47 c7">Ключи</span></p>
+<p class="c10 c34"><span class="c56">В реляционной модели ключи используются для обеспечения идентификации каждой строки и для установления связей между таблицами. </span><span class="c7">Ключ</span><span class="c12"> состоит из одного или нескольких атрибутов, которые идентифицируют другие атрибуты. Например, код студента идентифицирует все атрибуты студента, такие как имя и дата рождения. Роль ключа основана на концепции определения. </span></p>
+<p class="c34 c10"><span class="c7">Определение</span><span class="c12"> – это состояние, в котором знание значения одного атрибута позволяет определить значение другого. Идея определения не уникальна для среды базы данных.</span></p>
+<p class="c34 c10"><span class="c12">Если посмотреть атрибуты таблицы СТУДЕНТ, можно увидеть взаимосвязь между атрибутами. Если дано значение для СТ_КОД, то можно определить значение для СТ_ИМЯ, поскольку одно и только одно значение СТ_ИМЯ связано с заданным значением СТ_КОД. </span></p>
+<p class="c34 c10"><span class="c12">Определенная терминология и обозначения используются для описания связи на основе определения. Связь называется функциональной зависимостью, которая означает, что значение одного или нескольких атрибутов определяет значение одного или нескольких других атрибутов. </span></p>
+<p class="c34 c10"><span class="c12">Стандартная запись для представления зависимости между СТ_КОД и СТ_ИМЯ выглядит следующим образом: </span></p>
+<p class="c21 c10 c38"><span class="c12">СТ_КОД → СТ_ИМЯ </span></p>
+<p class="c34 c10"><span class="c56">В этой функциональной зависимости атрибут, значение которого определяет другое, называется </span><span class="c7">определителем или ключом</span><span class="c12">. </span></p>
+<p class="c34 c10"><span class="c12">Атрибут, значение которого определяется другим атрибутом, называется зависимым. Полная функциональная зависимость – используется для обозначения функциональных зависимостей, в которых весь набор атрибутов в определителе необходим для связи. </span></p>
+<p class="c34 c10"><span class="c12">Несколько разных типов ключей используется в реляционной модели.</span></p>
+<p class="c34 c10"><span class="c7">Составной ключ</span><span class="c12"> – это ключ, состоящий из нескольких атрибутов. Атрибут, который является частью ключа, называется атрибутом ключа. Например,</span></p>
+<p class="c21 c10 c38"><span class="c12">СТ_КОД → СТ_ДР</span></p>
+<p class="c21 c10 c38"><span class="c12">(СТ_ИМЯ, СТ_ФАМ, СТ_ДР, СТ_ГРУП) → СТ_ПЕР.</span></p>
+<p class="c34 c10"><span class="c12">В первой функциональной зависимости СТ_КОД является примером ключа, состоящего только из одного атрибута ключа. Во второй функциональной зависимости (СТ_ИМЯ, СТ_ФАМ, СТ_ДР, СТ_ГРУП) представляет собой составной ключ, состоящий из четырех ключевых атрибутов. </span></p>
+<p class="c34 c10"><span class="c7">Суперключ</span><span class="c12"> – это ключ, который может однозначно идентифицировать любую строку в таблице. Другими словами, суперключ функционально определяет каждый атрибут в строке. </span></p>
+<p class="c34 c10"><span class="c12">Особый тип суперключа называется ключом-кандидатом. </span></p>
+<p class="c34 c10"><span class="c7">Ключ-кандидат</span><span class="c12"> – это минимальный суперключ, то есть суперключ без каких-либо ненужных атрибутов. Ключ-кандидат основан на полной функциональной зависимости. Например, СТ_КОД будет ключом-кандидатом. (СТ_КОД, СТ_ИМЯ) – это суперключ, но он не является ключомкандидатом, поскольку СТ_ИМЯ может быть удален, а ключ все равно будет суперключом. </span></p>
+<p class="c34 c10"><span class="c12">Ключи-кандидаты называются кандидатами, потому что они являются приемлемыми вариантами, которые архитектор БД выберет при определении первичного ключа. </span></p>
+<p class="c34 c10"><span class="c7">Первичный ключ</span><span class="c12"> – это ключ-кандидат, выбранный в качестве основного средства уникальной идентификации строк таблицы.</span></p>
+<p class="c34 c10 c19"><span class="c12"></span></p>
+<p class="c34 c10"><span class="c7">Целостность сущности</span><span class="c12"> – это условие, при котором каждая строка в таблице имеет свой уникальный идентификатор. Для обеспечения целостности объекта первичный ключ имеет два требования: </span></p>
+<ol class="c42 lst-kix_hftuyph3qfio-0 start" start="1">
+  <li class="c22 c10 li-bullet-0"><span class="c12">Все значения в первичном ключе должны быть уникальными;</span></li>
+  <li class="c22 c10 li-bullet-0"><span class="c12">Ни один атрибут ключа в первичном ключе не может быть пустым. </span></li>
+</ol>
+<p class="c34 c10"><span class="c12">Пустые значения проблематичны в реляционной модели. NULL – это отсутствие какого-либо значения данных, и оно никогда не допускается ни в одной части первичного ключа. </span></p>
+<p class="c34 c10"><span class="c12">С теоретической точки зрения можно утверждать, что таблица, которая содержит NULL, вообще не является реляционной таблицей. Однако в практике некоторые NULL значения неизбежны.</span></p>
+<p class="c34 c10"><span class="c12">NULL может представлять любое из следующего: </span></p>
+<ul class="c42 lst-kix_nl1fn8u0qyav-0 start">
+  <li class="c6"><span class="c12">Неизвестное значение атрибута; </span></li>
+  <li class="c6"><span class="c12">Известное, но отсутствующее значение атрибута; </span></li>
+  <li class="c6"><span class="c12">Условие «неприменимо». </span></li>
+</ul>
+<p class="c10 c38 c87"><span class="c56">NULL-значения могут создавать проблемы при использовании агрегатных функций. NULL-значения могут создавать логические проблемы, когда реляционные таблицы связаны между собой.</span></p>
+<p style="text-align:center;"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 623.73px; height: 401.33px;"><img alt="" src="static/images/image1.png" style="width: 623.73px; height: 401.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+<p class="c51 c10 c38"><span class="c7 c47">Рисунок. Реляционная БД</span></p>
+<p class="c21 c10 c19"><span class="c12"></span></p>
+<p class="c21 c10"><span class="c47 c7">Правила целостности</span></p>
+<p class="c34 c10"><span class="c12">Правила целостности реляционной базы данных очень важны для хорошего проекта базы данных. Системы управления реляционными базами данных автоматически применяют правила целостности, но гораздо безопаснее убедиться, что проект БД соответствует правилам сущности и ссылочной целостности.</span></p>
+<p class="c34 c10 c19"><span class="c12"></span></p>
+<a id="t.607c5b718fb0d254a899fc69905bb729284e6386"></a><a id="t.1"></a>
+<table class="c76">
+  <tbody>
+    <tr class="c17">
+      <td class="c26" colspan="1" rowspan="1">
+        <p class="c51"><span class="c12">Требование</span></p>
+      </td>
+      <td class="c26" colspan="1" rowspan="1">
+        <p class="c51"><span class="c12">Цель</span></p>
+      </td>
+      <td class="c26" colspan="1" rowspan="1">
+        <p class="c51"><span class="c12">Пример</span></p>
+      </td>
+    </tr>
+    <tr class="c67">
+      <td class="c83" colspan="3" rowspan="1">
+        <p class="c51"><span class="c12">Целостность сущности </span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c26" colspan="1" rowspan="1">
+        <p class="c51"><span class="c12">Все записи первичного ключа должны являться уникальными, никакая часть первичного ключа не может быть нулевой. </span></p>
+      </td>
+      <td class="c26" colspan="1" rowspan="1">
+        <p class="c51"><span class="c12">Каждая строка будет иметь уникальный идентификатор, и значения внешнего ключа должны правильно ссылаться на значения первичного ключа. </span></p>
+      </td>
+      <td class="c26" colspan="1" rowspan="1">
+        <p class="c51"><span class="c12">У каждого студента уникальный номер, и при этом он не может быть нулевым; следовательно, все студенты однозначно идентифицируются по номеру.</span></p>
+      </td>
+    </tr>
+    <tr class="c67">
+      <td class="c83" colspan="3" rowspan="1">
+        <p class="c51"><span class="c12">Ссылочная целостность</span></p>
+      </td>
+    </tr>
+    <tr class="c17">
+      <td class="c26" colspan="1" rowspan="1">
+        <p class="c51"><span class="c12">Внешний ключ может иметь либо пустое значение, если он не является частью первичного ключа своей таблицы, либо значение, которое соответствует первичному ключу в таблице, с которой он связан. Каждое ненулевое значение внешнего ключа должно иметь ссылку на существующее значение первичного ключа. </span></p>
+      </td>
+      <td class="c26" colspan="1" rowspan="1">
+        <p class="c51"><span class="c12">Атрибут может не иметь соответствующего значения, но значение не пустое, оно должно совпадать с соответствующим первичным ключом. Применение правила ссылочной целостности делает невозможным удаление строки в одной таблице, первичный ключ которой имеет обязательные совпадающие значения внешнего ключа в другой таблице.</span></p>
+      </td>
+      <td class="c26" colspan="1" rowspan="1">
+        <p class="c51"><span class="c12">У студента еще может не быть назначенного куратора (номер), но нельзя поставить номер несуществующего куратора. </span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="c37 c10 c19"><span class="c12"></span></p>
+<p class="c37 c10 c38"><span class="c12">Чтобы избежать нулевых значений, некоторые разработчики используют специальные коды, известные как флаги, для указания отсутствия какого-либо значения. Другими правилами целостности, которые применяются в реляционной модели, являются ограничения NOT NULL и UNIQUE. Ограничение NOT NULL гарантирует, что каждая строка в таблице имеет значение для этого столбца. Ограничение UNIQUE гарантирует отсутствие повторяющихся значений для этого столбца.</span></p>

@@ -1,0 +1,2 @@
+FLASK_APP=scutwork
+FLASK_ENV=development
